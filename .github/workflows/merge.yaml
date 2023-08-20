@@ -18,3 +18,9 @@ jobs:
             echo "There are merge conflicts."
             exit 1
           fi
+      - name: Pull changes from master to main
+        if: success()
+        run: |
+          git checkout main
+          git pull origin master
+          git push origin main
