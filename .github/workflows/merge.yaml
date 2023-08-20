@@ -10,11 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Checkout master branch
+        run: |
+          git checkout master
+          git pull origin master
       - name: Check for merge conflicts
         run: |
-          git fetch origin master
-          git merge --no-ff master
-          if [ -n "$(git status -s)" ]; then
+          git fetch origin main
+          git merge --no-ff --no-commit main
+          if [ -n "$(git diff --name-only --diff-filter=U)" ]; then
             echo "There are merge conflicts."
             exit 1
           fi
@@ -22,5 +26,5 @@ jobs:
         if: success()
         run: |
           git checkout main
-          git pull origin master
+          git merge master
           git push origin main
