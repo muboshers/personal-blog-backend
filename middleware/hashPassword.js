@@ -1,7 +1,7 @@
 import bcrypt from "bcryptjs";
 import { errorHandle } from "./errorHandle.js";
 
-// some comment
+// some comment for test
 
 export const hashedPassword = async (password) => {
   try {
