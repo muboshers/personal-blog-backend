@@ -1,0 +1,20 @@
+name: Check for merge conflicts
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  check-merge-conflicts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check for merge conflicts
+        run: |
+          git fetch origin master
+          git merge --no-ff master
+          if [ -n "$(git status -s)" ]; then
+            echo "There are merge conflicts."
+            exit 1
+          fi
