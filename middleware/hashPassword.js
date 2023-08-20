@@ -1,6 +1,8 @@
 import bcrypt from "bcryptjs";
 import { errorHandle } from "./errorHandle.js";
 
+// some comment
+
 export const hashedPassword = async (password) => {
   try {
     const salt = await bcrypt.genSalt(12);
