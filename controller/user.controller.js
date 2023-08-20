@@ -1,0 +1,8 @@
+import { UserService } from "../services/user.services.js";
+
+export const RegisterController = (req, res) =>
+  UserService.createUser(req, res);
+
+export const UpdateController = (req, res) => UserService.updateUser(req, res);
+
+export const LoginController = (req, res) => UserService.loginUser(req, res);
