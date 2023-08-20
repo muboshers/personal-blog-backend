@@ -16,7 +16,7 @@ jobs:
           git pull origin master
       - name: Check for merge conflicts
         run: |
-          git fetch origin main
+          git fetch origin/master
           git merge --no-ff --no-commit main
           if [ -n "$(git diff --name-only --diff-filter=U)" ]; then
             echo "There are merge conflicts."
@@ -24,7 +24,7 @@ jobs:
           fi
       - name: Pull changes from master to main
         if: success()
-        run: 
+        run: |
           git checkout main
-          git pull origin master
+          git pull origin/master
           git push origin main
