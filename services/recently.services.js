@@ -4,7 +4,7 @@ import { userModel } from "../models/user.model.js";
 import { blogModel } from "../models/blog.model.js";
 
 export class Recently {
-  static createRecently = async (req, res) => {
+  static createRecently = async (req, res, isLocal = true) => {
     try {
       const { id } = req.params;
       const user = await userModel.findOne({ device: req.userDevice });
@@ -30,7 +30,9 @@ export class Recently {
         recentlyBlog: { $push: newItemId },
       });
 
-      return res.status(200).json({ message: "Success!" });
+      if (!isLocal)
+        return res.status(200).json({ message: "Succesfully done!" });
+      return true;
     } catch (err) {
       return errorHandle({ err, res });
     }
