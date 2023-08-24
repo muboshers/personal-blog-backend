@@ -9,6 +9,7 @@ import { registerIpAdress } from "./middleware/getIpAdress.js";
 //  import routes
 import UserRouter from "./routes/user.routes.js";
 import RecentlyBlogRoutes from "./routes/recently.routes.js";
+import BlogRoutes from "./routes/blog.routes.js";
 
 // global config
 dotenv.config();
@@ -20,10 +21,12 @@ const app = express();
 app.use(cors({ methods: ["*"], origin: ["*"] }));
 app.use(express.json());
 app.use(registerIpAdress);
+app.use(express.static("public"));
 
 // app use routes
 app.use("/api/v1/user", UserRouter);
 app.use("/api/v1/recently-blog", RecentlyBlogRoutes);
+app.use("/api/v1/blog", BlogRoutes);
 
 const PORT = process.env.PORT || 5000;
 

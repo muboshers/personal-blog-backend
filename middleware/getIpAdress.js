@@ -15,6 +15,7 @@ export const registerIpAdress = async (req, res, next) => {
       }
       req.userDevice = addr;
       req.userId = isExistUser?._id;
+      req.userRole = isExistUser.role;
       next();
     });
   } catch (error) {

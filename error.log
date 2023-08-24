@@ -1,1 +1,7 @@
 {"level":"error","message":"08/21/2023, 08:04 PM Error: querySrv ECONNREFUSED _mongodb._tcp.personal-blog.xi1etgd.mongodb.net"}
+{"level":"error","message":"08/24/2023, 11:48 AM TypeError: Cannot read properties of undefined (reading 'finename')"}
+{"level":"error","message":"08/24/2023, 11:56 AM ValidationError: tags: Cast to embedded failed for value \"Salom\" (type string) at path \"tags\" because of \"ObjectParameterError\""}
+{"level":"error","message":"08/24/2023, 11:58 AM ValidationError: tags: Cast to embedded failed for value \"{value:\"AGI\",color:\"Salom\"}\" (type string) at path \"tags\" because of \"ObjectParameterError\""}
+{"level":"error","message":"08/24/2023, 12:00 PM ValidationError: tags: Cast to embedded failed for value \"{value:\"AGI\",color:\"Salom\"}\" (type string) at path \"tags\" because of \"ObjectParameterError\""}
+{"level":"error","message":"08/24/2023, 12:00 PM ValidationError: tags: Cast to embedded failed for value \"{value:\"AGI\",color:\"Salom\"}\" (type string) at path \"tags\" because of \"ObjectParameterError\""}
+{"level":"error","message":"08/24/2023, 12:02 PM ValidationError: tags: Cast to embedded failed for value \"`[{\"value\": \"John\", \"color\": 'red'}]`\" (type string) at path \"tags\" because of \"ObjectParameterError\""}

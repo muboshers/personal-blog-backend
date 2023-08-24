@@ -15,22 +15,20 @@ const blogSchema = mongoose.Schema(
       require: true,
     },
     tags: {
-      type: [
-        {
-          color: String,
-          value: String,
-        },
-      ],
+      type: Array,
       default: [],
     },
     description: String,
     blogBody: String,
+    voiceUrl: {
+      type: String,
+      default: "",
+    },
   },
   {
     timestamps: true,
   }
 );
-
 
 // some comment
 export const blogModel = mongoose.model("blog", blogSchema);
