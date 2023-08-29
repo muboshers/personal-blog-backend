@@ -13,9 +13,8 @@ export const TextToVoice = async (text) => {
         },
       }
     );
-
     return response.data?.result?.url;
   } catch (error) {
-    console.log(error.message);
+    console.log("MOHIR AI error ", error.message);
   }
 };

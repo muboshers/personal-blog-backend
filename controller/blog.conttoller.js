@@ -10,3 +10,5 @@ export const UpdateBlogController = (req, res) =>
   BlogService.updateBlog(req, res);
 
 export const GetBlogController = (req, res) => BlogService.getAllBlog(req, res);
+
+export const ReadBlogById = (req, res) => BlogService.readBlogById(req, res);
