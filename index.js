@@ -10,6 +10,7 @@ import { registerIpAdress } from "./middleware/getIpAdress.js";
 import UserRouter from "./routes/user.routes.js";
 import RecentlyBlogRoutes from "./routes/recently.routes.js";
 import BlogRoutes from "./routes/blog.routes.js";
+import ProjectRouter from "./routes/project.routes.js";
 
 // global config
 dotenv.config();
@@ -27,6 +28,7 @@ app.use(express.static("public"));
 app.use("/api/v1/user", UserRouter);
 app.use("/api/v1/recently-blog", RecentlyBlogRoutes);
 app.use("/api/v1/blog", BlogRoutes);
+app.use("/api/v1/project", ProjectRouter);
 
 const PORT = process.env.PORT || 5000;
 
