@@ -1,4 +1,4 @@
-import { ProjectService } from "../services/project.services";
+import { ProjectService } from "../services/project.services.js";
 
 export const CreateProjectController = (req, res) =>
   ProjectService.createProject(req, res);
