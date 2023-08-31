@@ -3,6 +3,8 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import mongoose from "mongoose";
+import { createServer } from "http";
+import { WebSocketServer } from "ws";
 import { errorHandle } from "./middleware/errorHandle.js";
 import { registerIpAdress } from "./middleware/getIpAdress.js";
 
@@ -17,6 +19,8 @@ dotenv.config();
 
 // register app
 const app = express();
+
+const server = createServer(app);
 
 // modules config
 app.use(cors({ methods: ["*"], origin: ["*"] }));
@@ -40,6 +44,22 @@ mongoose
   .connect(process.env.MONGO_URL)
   .then(() => {
     console.log("MongoDB connected successfully");
-    app.listen(PORT, () => console.log(`Server running on ${PORT} port`));
+    server.listen(PORT, () => {
+      console.log(`Server running on ${PORT} port`);
+      // Create WebSocket instance
+      const websocket = new WebSocketServer({ server });
+
+      websocket.on("connection", (socket) => {
+        console.log("WebSocket client connected");
+
+        socket.on("message", (event) => {
+          socket.send("Your message is  ", JSON.parse(event.data));
+        });
+
+        socket.on("close", () => {
+          console.log("WebSocket client disconnected");
+        });
+      });
+    });
   })
   .catch((err) => errorHandle({ err: err }));
