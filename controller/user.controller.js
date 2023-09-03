@@ -6,3 +6,5 @@ export const RegisterController = (req, res) =>
 export const UpdateController = (req, res) => UserService.updateUser(req, res);
 
 export const LoginController = (req, res) => UserService.loginUser(req, res);
+
+export const GetMeController = (req,res) => UserService.getMeInformation(req,res)
