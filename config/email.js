@@ -47,3 +47,24 @@ export const sendMessageEmaillSubscription = (email) => {
     }
   });
 };
+
+export const sendContactMessageEmail = (email, title, message) => {
+  let mailOptions = {
+    from: "youremail@gmail.com",
+    to: email,
+    subject: title,
+    template: "contact-message",
+    context: {
+      email,
+      message,
+    },
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent: " + info.response);
+    }
+  });
+};

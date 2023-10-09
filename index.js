@@ -17,13 +17,8 @@ import ProjectRouter from "./routes/project.routes.js";
 // global config
 dotenv.config();
 
-// register app
 const app = express();
 
-// const server = createServer(app);
-// const sockserver = new WebSocketServer({ port: 443 });
-
-// modules config
 app.use(cors({ methods: ["*"], origin: ["http://localhost:3000"] }));
 app.use(express.json());
 app.use(registerIpAdress);
@@ -47,20 +42,6 @@ mongoose
     console.log("MongoDB connected successfully");
     app.listen(PORT, () => {
       console.log(`Server running on ${PORT} port`);
-      // Create WebSocket instance
-      // const websocket = new WebSocketServer({ server });
-
-      // websocket.on("connection", (socket) => {
-      //   console.log("WebSocket client connected");
-
-      //   socket.on("message", (event) => {
-      //     socket.send("Your message is  ", JSON.parse(event.data));
-      //   });
-
-      //   socket.on("close", () => {
-      //     console.log("WebSocket client disconnected");
-      //   });
-      // });
     });
   })
   .catch((err) => errorHandle({ err: err }));
