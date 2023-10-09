@@ -3,8 +3,8 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import mongoose from "mongoose";
-import { WebSocketServer } from "ws";
-import { createServer } from "http";
+// import { WebSocketServer } from "ws";
+// import { createServer } from "http";
 import { errorHandle } from "./middleware/errorHandle.js";
 import { registerIpAdress } from "./middleware/getIpAdress.js";
 
@@ -20,8 +20,8 @@ dotenv.config();
 // register app
 const app = express();
 
-const server = createServer(app);
-const sockserver = new WebSocketServer({ port: 443 });
+// const server = createServer(app);
+// const sockserver = new WebSocketServer({ port: 443 });
 
 // modules config
 app.use(cors({ methods: ["*"], origin: ["http://localhost:3000"] }));
