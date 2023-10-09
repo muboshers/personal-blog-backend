@@ -6,6 +6,10 @@ const contactSchema = mongoose.Schema(
     email: String,
     title: String,
     message: String,
+    is_read: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,

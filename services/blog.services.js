@@ -52,13 +52,6 @@ export class BlogService {
     }
   };
 
-  /**
-   *
-   * @param {query.page} req
-   * @param {query.limit} req
-   * @returns
-   */
-
   static getAllBlog = async (req, res) => {
     try {
       const pageQueryOptions = {

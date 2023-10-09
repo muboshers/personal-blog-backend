@@ -6,7 +6,6 @@ const logger = new winston.Logger({
 
 export const errorHandle = (arg) => {
   if (!arg?.err) return;
-  console.log(arg.err);
   const formatTime = new Intl.DateTimeFormat("en", {
     year: "numeric",
     month: "2-digit",

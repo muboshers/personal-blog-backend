@@ -4,15 +4,15 @@ const userSchema = mongoose.Schema(
   {
     firstName: {
       type: String,
-      default: "",
+      default: "Palonchi",
     },
     lastName: {
       type: String,
-      default: "",
+      default: "Pistonchi",
     },
     email: {
       type: String,
-      default: "",
+      default: "palonchiemail@com",
     },
     device: {
       type: String,
