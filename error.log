@@ -5,3 +5,8 @@
 {"level":"error","message":"09/11/2023, 05:01 PM TypeError: Cannot destructure property 'password' of '(intermediate value)' as it is undefined."}
 {"level":"error","message":"10/09/2023, 11:18 AM Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
 {"level":"error","message":"10/09/2023, 11:18 AM Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"10/09/2023, 11:42 AM ReferenceError: server is not defined"}
+{"level":"error","message":"10/09/2023, 11:42 AM ReferenceError: server is not defined"}
+{"level":"error","message":"10/09/2023, 11:42 AM TypeError: socketsServer.listen is not a function"}
+{"level":"error","message":"10/09/2023, 11:42 AM ReferenceError: server is not defined"}
+{"level":"error","message":"10/09/2023, 11:43 AM ReferenceError: server is not defined"}

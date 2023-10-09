@@ -45,22 +45,22 @@ mongoose
   .connect(process.env.MONGO_URL)
   .then(() => {
     console.log("MongoDB connected successfully");
-    server.listen(PORT, () => {
+    app.listen(PORT, () => {
       console.log(`Server running on ${PORT} port`);
       // Create WebSocket instance
-      const websocket = new WebSocketServer({ server });
+      // const websocket = new WebSocketServer({ server });
 
-      websocket.on("connection", (socket) => {
-        console.log("WebSocket client connected");
+      // websocket.on("connection", (socket) => {
+      //   console.log("WebSocket client connected");
 
-        socket.on("message", (event) => {
-          socket.send("Your message is  ", JSON.parse(event.data));
-        });
+      //   socket.on("message", (event) => {
+      //     socket.send("Your message is  ", JSON.parse(event.data));
+      //   });
 
-        socket.on("close", () => {
-          console.log("WebSocket client disconnected");
-        });
-      });
+      //   socket.on("close", () => {
+      //     console.log("WebSocket client disconnected");
+      //   });
+      // });
     });
   })
   .catch((err) => errorHandle({ err: err }));
